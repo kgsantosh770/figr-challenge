@@ -8,6 +8,12 @@
   background: black;
 }
 
+.banner{
+  perspective: 1000px;
+  transform-origin: bottom center;
+  transform: rotateX(20deg);
+}
+
 @media only screen and (min-width: 769px) {
   .banner-bg {
     background-image: url('../src/assets/images/banner-bg.png');
