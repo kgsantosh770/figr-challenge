@@ -5,11 +5,33 @@ import galleryIcon from '../../assets/images/gallery-icon.svg'
 import moreIcon from '../../assets/images/triple-dot.svg'
 import cursorPink from '../../assets/images/cursor-pink.svg'
 import cursorBlue from '../../assets/images/cursor-blue.svg'
+import dottedBg from '../../assets/images/dotted-bg.png'
+import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
 
 const BannerCard = () => {
+    const bannerBox = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            const rotatingDiv = bannerBox.current;
+            const scrollY = window.scrollY;
+            const divOffsetTop = rotatingDiv.offsetTop;
+            const divHeight = rotatingDiv.clientHeight;
+            const divMidpoint = divOffsetTop + divHeight * 0.3;
+            const rotateX = Math.max(0, (scrollY - divMidpoint) / 5);
+            console.log(rotatingDiv.offsetTop);
+            gsap.to(rotatingDiv, { rotateX: -rotateX, ease: 'power2.out', duration: 0.5 })
+        }
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [])
+
     return (
-        <div className='block mt-2 mx-auto bg-dotted-pattern bg-[length:100%_100%] bg-no-repeat max-w-[1040px] relative cursor-figma-green'>
-            <div className='inner-box flex items-center pt-32 pb-28 pl-7 pr-20 justify-between'>
+        <div className='banner block mt-2 mx-auto max-w-[1040px] relative cursor-figma-green persp'>
+            <div ref={bannerBox} className='inner-box bg-transparent flex items-center pt-32 pb-28 pl-7 pr-20 justify-between relative'>
                 <div className='w-[43%]'>
                     <a href="#h" className='bg-figr-blue w-max rounded-full py-2 pl-4 pr-3 hover:pr-5 text-white text-xs group flex justify-between items-center transition-all duration-300 cursor-figma-green'>
                         <span>✨ $7.5M seed raised with Accel & Square Peg</span>
@@ -39,9 +61,10 @@ const BannerCard = () => {
                     </div>
                     <div className='bg-[#606060] w-72'></div>
                 </div>
+                <img src={dottedBg} alt="banner-bg" className='absolute top-0 left-0 w-full h-full -z-10' />
+                <img src={cursorPink} alt="cursor-pink" className='absolute top-[21rem] left-[22.5rem]' />
+                <img src={cursorBlue} alt="cursor-blue" className='absolute bottom-28 left-52' />
             </div>
-            <img src={cursorPink} alt="cursor-pink" className='absolute top-[21rem] left-[22.5rem]'/>
-            <img src={cursorBlue} alt="cursor-blue" className='absolute bottom-28 left-52'/>
         </div>
     )
 }
