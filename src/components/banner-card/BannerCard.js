@@ -14,33 +14,35 @@ const BannerCard = () => {
     const bannerBox = useRef(null);
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(
-            bannerBox.current,
-            {
-                rotateX: -70,
-                scrollTrigger: {
-                    trigger: bannerBox.current,
-                    start: 'top top',
-                    end: '170% bottom',
-                    scrub: true,
-                }
-            },
-        )
+        if (window.innerWidth > 768) {
+            gsap.to(
+                bannerBox.current,
+                {
+                    rotateX: -70,
+                    scrollTrigger: {
+                        trigger: bannerBox.current,
+                        start: 'top top',
+                        end: '170% bottom',
+                        scrub: true,
+                    }
+                },
+            )
+        }
     }, [])
 
     return (
-        <div className='banner block mt-2 mx-auto max-w-[1040px] relative cursor-figma-green perspective-1000'>
-            <div ref={bannerBox} className='inner-box bg-transparent flex items-center pt-32 pb-28 pl-7 pr-20 justify-between relative'>
-                <div className='w-[43%]'>
-                    <a href="#h" className='bg-figr-blue w-max rounded-full py-2 pl-4 pr-3 hover:pr-5 text-white text-xs group flex justify-between items-center transition-all duration-300 cursor-figma-green'>
+        <div className='banner block mx-auto max-w-[1040px] relative cursor-figma-green perspective-1000'>
+            <div ref={bannerBox} className='inner-box bg-transparent flex-col-reverse lg:flex-row flex items-center lg:pt-32 lg:pb-28 px-7 lg:pl-7 lg:pr-20 justify-between relative'>
+                <div className='w-full lg:w-[43%]'>
+                    <a href="#h" className='bg-figr-blue w-max rounded-full py-2 pl-4 pr-3 hover:pr-5 text-white text-xs group hidden lg:flex justify-between items-center transition-all duration-300 cursor-figma-green'>
                         <span>✨ $7.5M seed raised with Accel & Square Peg</span>
                         <img src={arrowRight} alt="arrow" className='inline pl-2 w-6 relative left-0 group-hover:left-2 transition-position duration-300' />
                     </a>
-                    <p className='text-white text-6xl font-bold pt-10'>Impactful stories. Made effortlessly</p>
-                    <p className='text-[#79787B] text-md pt-5'>Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <p className='text-white text-6xl font-bold pt-10 lg:pt-14'>Impactful stories. Made effortlessly</p>
+                    <p className='text-[#79787B] text-md pt-5 lg:pt-10'>Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                 </div>
-                <div className='rounded-lg overflow-hidden flex border border-[#292929]'>
-                    <div className='px-4 py-8'>
+                <div className='rounded-lg overflow-hidden flex border border-[#292929] w-full lg:w-auto min-h-[20rem] lg:min-h-[auto]'>
+                    <div className='px-4 py-8 hidden lg:block'>
                         <img className='w-16 mb-3' src={blocksText} alt="blocks" />
                         <ul>
                             {
@@ -58,11 +60,11 @@ const BannerCard = () => {
                             }
                         </ul>
                     </div>
-                    <div className='bg-[#606060] w-72'></div>
+                    <div className='bg-[#606060] w-full lg:w-72'></div>
                 </div>
-                <img src={dottedBg} alt="banner-bg" className='absolute top-0 left-0 w-full h-full -z-10' />
-                <img src={cursorPink} alt="cursor-pink" className='absolute top-[21rem] left-[22.5rem]' />
-                <img src={cursorBlue} alt="cursor-blue" className='absolute bottom-28 left-52' />
+                <img src={dottedBg} alt="banner-bg" className='absolute top-0 left-0 w-full h-full -z-10 hidden lg:block' />
+                <img src={cursorPink} alt="cursor-pink" className='absolute top-[28rem] lg:top-[21rem] left-64 lg:left-[22.5rem]' />
+                <img src={cursorBlue} alt="cursor-blue" className='absolute bottom-20 lg:bottom-24 left-52' />
             </div>
         </div>
     )

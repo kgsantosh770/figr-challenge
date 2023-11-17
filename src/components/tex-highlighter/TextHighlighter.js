@@ -10,7 +10,7 @@ const TextHighlighter = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         let words = textWrapper.current.querySelectorAll('.word');
-        
+
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: textWrapper.current,
@@ -35,8 +35,8 @@ const TextHighlighter = () => {
     }, []);
 
     return (
-        <div ref={textWrapper} className="mt-20">
-            <p className="text-[#202020] text-[2.6rem] font-bold w-[70%] mx-auto leading-snug">
+        <div ref={textWrapper} className="mt-20 px-7 lg:px-0">
+            <p className="text-[#202020] text-3xl lg:text-[2.6rem] font-bold lg:w-[70%] mx-auto leading-snug">
                 {text.split(' ').map((word, index) => (
                     <span key={index} className="word">{word} </span>
                 ))}

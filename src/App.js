@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <BannerCard />
       </div>
-      <Cards className="mt-40"/>
+      <Cards className="mt-32 lg:mt-40"/>
       <TextHighlighter/>
       <Workflow />
       <MobileExperience />

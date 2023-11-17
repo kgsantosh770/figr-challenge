@@ -43,20 +43,20 @@ const MobileExperience = () => {
 
 
     return (
-        <div className='flex pb-64 justify-between px-48 overflow-x-hidden'>
-            <div className='left-section w-[45%] pt-16'>
+        <div className='flex flex-col lg:flex-row mt-10 lg:mt-40 pb-64 justify-between px-7 lg:px-48 overflow-x-hidden'>
+            <div className='left-section w-full lg:w-[45%] pt-16'>
                 <div className='flex items-center'>
                     <img src={blueStar} alt="star" className='inline' />
                     <span className='text-figr-text-blue pl-2'>Mobile Experience</span>
                 </div>
-                <p className='block mt-2 text-6xl font-bold text-white'>
+                <p className='block mt-2 text-4xl lg:text-6xl font-bold text-white'>
                     Korem ipsum dolor sit amet
                 </p>
-                <p className='block mt-5 text-lg text-figr-grey'>
+                <p className='block mt-5 text-md lg:text-lg text-figr-grey'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
                 </p>
             </div>
-            <div className='right-section w-[45%] relative'>
+            <div className='right-section w-full lg:w-[45%] relative mt-14 lg:mt-0'>
                 <div className='flex justify-center rounded-md overflow-hidden w-max mx-auto mb-5'>
                     <div className='bg-gray-800 px-3 py-3'>
                         <img className="w-6 aspect-square" src={desktopIcon} alt="desktop" />
@@ -65,7 +65,7 @@ const MobileExperience = () => {
                         <img className="w-6 aspect-square" src={mobileIcon} alt="mobile" />
                     </div>
                 </div>
-                <div ref={cardRef} className='w-[40rem]'>
+                <div ref={cardRef} className='w-[80vw] lg:w-[40rem] mx-auto lg:mx-0'>
                     <img className='w-full' src={desktopSample} alt='desktop-demo' />
                 </div>
             </div>
