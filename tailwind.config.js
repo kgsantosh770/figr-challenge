@@ -7,6 +7,8 @@ module.exports = {
         'figr-blue': '#7053FF',
         'figr-green': '#31b970',
         'figr-text-blue': '#A594FD',
+        'figr-grey': '#FFFFFF33',
+        'figr-lightgrey': '#FFFFFF1A',
       },
       backgroundImage: {
         'dotted-pattern': "url('/src/assets/images/dotted-bg.png')",
