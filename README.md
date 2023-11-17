@@ -33,9 +33,9 @@ To run the Figr Challenge React application locally, follow these steps:
 
     npm start
 
-This will launch the application locally, and you can access it in your web browser at [http://localhost:3000]
+This will launch the application locally, and you can access it in your web browser at http://localhost:3000
 
 ## Deployment
 The Figr Challenge React application is deployed on Netlify. You can access the live version of the application here.
 
-Web link: [https://master--spectacular-kitsune-2a6855.netlify.app/]
+Web link: https://master--spectacular-kitsune-2a6855.netlify.app/
