@@ -19,18 +19,21 @@ To run the Figr Challenge React application locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/kgsantosh770/figr-challenge]
+   git clone https://github.com/kgsantosh770/figr-challenge
 
 2. Navigate to the project directory:
 
+    ```bash
     cd figr-challenge
 
 3. Install dependencies:
 
+    ```bash
     npm install
 
 4. Start the development server:
 
+    ```bash
     npm start
 
 This will launch the application locally, and you can access it in your web browser at http://localhost:3000
