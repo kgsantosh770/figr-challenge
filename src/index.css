@@ -13,7 +13,6 @@
 }
 
 .banner{
-  perspective: 1000px;
   transform-origin: bottom center;
   transform: rotateX(20deg);
 }

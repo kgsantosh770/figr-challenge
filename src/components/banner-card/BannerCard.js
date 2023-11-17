@@ -7,29 +7,31 @@ import cursorPink from '../../assets/images/cursor-pink.svg'
 import cursorBlue from '../../assets/images/cursor-blue.svg'
 import dottedBg from '../../assets/images/dotted-bg.png'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef } from 'react'
 
 const BannerCard = () => {
     const bannerBox = useRef(null);
     useEffect(() => {
-        const handleScroll = () => {
-            const rotatingDiv = bannerBox.current;
-            const scrollY = window.scrollY;
-            const divOffsetTop = rotatingDiv.offsetTop;
-            const divHeight = rotatingDiv.clientHeight;
-            const divMidpoint = divOffsetTop + divHeight * 0.3;
-            const rotateX = Math.max(0, (scrollY - divMidpoint) / 5);
-            gsap.to(rotatingDiv, { rotateX: -rotateX, ease: 'power2.out', duration: 0.5 })
-        }
-        window.addEventListener('scroll', handleScroll);
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(
+            bannerBox.current,
+            {
+                rotateX: -70,
+                scrollTrigger: {
+                    trigger: bannerBox.current,
+                    start: 'top top',
+                    end: '170% bottom',
+                    scrub: true,
+                    markers: true,
+                }
+            },
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
+        )
     }, [])
 
     return (
-        <div className='banner block mt-2 mx-auto max-w-[1040px] relative cursor-figma-green persp'>
+        <div className='banner block mt-2 mx-auto max-w-[1040px] relative cursor-figma-green perspective-1000'>
             <div ref={bannerBox} className='inner-box bg-transparent flex items-center pt-32 pb-28 pl-7 pr-20 justify-between relative'>
                 <div className='w-[43%]'>
                     <a href="#h" className='bg-figr-blue w-max rounded-full py-2 pl-4 pr-3 hover:pr-5 text-white text-xs group flex justify-between items-center transition-all duration-300 cursor-figma-green'>
