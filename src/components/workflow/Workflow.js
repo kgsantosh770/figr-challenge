@@ -14,8 +14,6 @@ const Workflow = () => {
         const cards = gsap.utils.toArray(".right-section .card:not(:first-child)")
         const allCards = gsap.utils.toArray(".right-section .card")
         allCards.forEach((card, index) => {
-            console.log(card)
-            console.log(index*101);
             gsap.set(card, { yPercent: index * 101 })
         })
 
