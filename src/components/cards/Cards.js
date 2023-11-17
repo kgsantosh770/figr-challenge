@@ -64,7 +64,7 @@ const Cards = ({ className }) => {
     }, [])
 
     return (
-        <div className={`${className ? className : ''} pb-24 overflow-hidden`}>
+        <div className={`${className ? className : ''} pb-10 overflow-hidden`}>
             <div className='ml-[18%]'>
                 <div className='flex items-center'>
                     <img src={blueStar} alt="star" className='inline' />
