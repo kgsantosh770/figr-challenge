@@ -23,10 +23,8 @@ const BannerCard = () => {
                     start: 'top top',
                     end: '170% bottom',
                     scrub: true,
-                    markers: true,
                 }
             },
-
         )
     }, [])
 
