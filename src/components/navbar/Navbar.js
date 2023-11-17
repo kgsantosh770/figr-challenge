@@ -1,9 +1,10 @@
 import logo from '../../assets/images/logo.svg';
+import mobileLogo from '../../assets/images/mobile-logo.svg';
 
 const Navbar = () => {
     return (
         <nav className="flex justify-between align-middle py-4 lg:py-8 pl-4 pr-8 text-white">
-            <img src={logo} alt="logo" />
+            <img src={window.innerWidth < 768 ? mobileLogo : logo} alt="logo" />
             <ul className='gap-6 hidden lg:flex'>
                 <li className='self-center underline underline-offset-8'><a href='#'>Product</a></li>
                 <li className='self-center hover:underline hover:underline-offset-8'><a href='#'>Our Story</a></li>
