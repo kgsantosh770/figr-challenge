@@ -6,9 +6,9 @@ const Navbar = () => {
         <nav className="flex justify-between align-middle py-4 lg:py-8 pl-4 pr-8 text-white">
             <img src={window.innerWidth < 768 ? mobileLogo : logo} alt="logo" />
             <ul className='gap-6 hidden lg:flex'>
-                <li className='self-center underline underline-offset-8'><a href='#'>Product</a></li>
-                <li className='self-center hover:underline hover:underline-offset-8'><a href='#'>Our Story</a></li>
-                <li className='self-center hover:underline hover:underline-offset-8'><a href='#'>Careers</a></li>
+                <li className='self-center underline underline-offset-8'><a href='#product'>Product</a></li>
+                <li className='self-center hover:underline hover:underline-offset-8'><a href='#story'>Our Story</a></li>
+                <li className='self-center hover:underline hover:underline-offset-8'><a href='#careers'>Careers</a></li>
             </ul>
             <button className="bg-white text-black rounded-xl px-4 font-semibold hidden lg:block">
                 Join Beta
