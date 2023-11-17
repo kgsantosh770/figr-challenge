@@ -19,7 +19,6 @@ const BannerCard = () => {
             const divHeight = rotatingDiv.clientHeight;
             const divMidpoint = divOffsetTop + divHeight * 0.3;
             const rotateX = Math.max(0, (scrollY - divMidpoint) / 5);
-            console.log(rotatingDiv.offsetTop);
             gsap.to(rotatingDiv, { rotateX: -rotateX, ease: 'power2.out', duration: 0.5 })
         }
         window.addEventListener('scroll', handleScroll);
